@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ytre Open – Swimrun Randesund</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&amp;family=Barlow:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ocean: #003F5E; --ocean-mid: #005F8A; --water: #00A8CC;
+    --water-light: #B8E8F3; --sand: #FBF6EE; --sand-dark: #F0E8D8;
+    --coral: #F4623A; --white: #FFFFFF; --text-dark: #0A2A3B;
+    --text-mid: #3A5A6E; --text-muted: #7A9AAD;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Barlow', sans-serif; background: var(--sand); color: var(--text-dark); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 2.5rem; background: var(--ocean);
+  }
+  .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
+  .nav-logo span { color: var(--water); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a { font-size: 0.875rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.8); text-decoration: none; }
+  .nav-cta { background: var(--coral) !important; color: white !important; padding: 0.5rem 1.2rem; border-radius: 4px; }
+
+  /* HERO */
+  .hero {
+    background: var(--ocean); display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    position: relative; overflow: hidden; padding: 5rem 2rem 4rem;
+  }
+  .hero-bg-circles { position: absolute; inset: 0; pointer-events: none; }
+  .circle { position: absolute; border-radius: 50%; opacity: 0.06; background: var(--water); }
+  .c1 { width: 700px; height: 700px; top: -200px; right: -150px; }
+  .c2 { width: 500px; height: 500px; bottom: -100px; left: -150px; }
+  .hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--water); margin-bottom: 1.2rem; }
+  .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(5rem, 14vw, 9rem); font-weight: 900; line-height: 0.9; color: var(--white); text-transform: uppercase; }
+  .hero h1 .accent { color: var(--water); }
+  .hero-sub { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.7); margin-top: 1.5rem; letter-spacing: 0.05em; line-height: 1.7; }
+  .hero-sub strong { color: rgba(255,255,255,0.95); font-weight: 500; }
+  .hero-actions { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .btn-primary { display: inline-block; background: var(--coral); color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.4rem; border-radius: 4px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; }
+  .btn-primary:hover { background: #d34e2a; }
+  .btn-outline { display: inline-block; background: transparent; color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.4rem; border-radius: 4px; border: 2px solid rgba(255,255,255,0.35); text-decoration: none; }
+  
+  .hero-stats { display: flex; gap: 3rem; margin-top: 4rem; flex-wrap: wrap; justify-content: center; }
+  .stat { text-align: center; }
+  .stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--water); display: block; }
+  .stat-label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .hero-wave { display: block; width: 100%; }
+
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--water); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1; text-transform: uppercase; color: var(--ocean); margin-bottom: 1.2rem; }
+  .section-body { font-size: 1.05rem; line-height: 1.75; color: var(--text-mid); max-width: 620px; }
+
+  /* OM */
+  .about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-visual { background: var(--ocean); border-radius: 12px; padding: 3rem 2.5rem; color: white; text-align: center; position: relative; overflow: hidden; }
+  .av-text { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--water-light); line-height: 1.3; }
+  .av-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem; }
+
+  /* LØYPEN */
+  .route { background: var(--sand); }
+  .route-steps { margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .route-step { background: white; border-radius: 10px; padding: 1.75rem 1.5rem; position: relative; border-top: 4px solid var(--water); }
+  .step-num { font-family: 'Barlow Condensed', sans-serif; font-size: 3.5rem; font-weight: 900; color: var(--sand-dark); position: absolute; top: 0.5rem; right: 1rem; line-height: 1; z-index: 1; }
+  .step-type { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 3px; margin-bottom: 0.75rem; position: relative; z-index: 2; }
+  .swim { background: #E0F4FB; color: #005F8A; }
+  .run { background: #FFF0EB; color: #C04020; }
+  .step-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--ocean); margin-bottom: 0.4rem; position: relative; z-index: 2; }
+  .step-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.5; position: relative; z-index: 2; }
+
+  /* PRAKTISK */
+  .info-grid { margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .info-card { border: 1.5px solid var(--sand-dark); border-radius: 10px; padding: 1.75rem; background: white; }
+  .info-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+  .info-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ocean); margin-bottom: 0.5rem; }
+
+  /* PÅMELDING / SKJEMA */
+  .signup { background: var(--ocean); text-align: center; position: relative; overflow: hidden; }
+  .signup .section-title { color: white; }
+  .signup-sub { font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .signup-form { display: flex; gap: 0.75rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center; position: relative; z-index: 2; }
+  .signup-form input { flex: 1; min-width: 240px; padding: 0.85rem 1.2rem; border-radius: 4px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: white; font-family: 'Barlow', sans-serif; font-size: 1rem; outline: none; }
+  
+  /* KONTAKT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-form-wrap { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+  .form-group { margin-bottom: 1.2rem; text-align: left; }
+  .form-group label { display: block; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 0.4rem; }
+  .form-group input, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--sand-dark); border-radius: 6px; font-family: 'Barlow', sans-serif; font-size: 0.95rem; color: var(--text-dark); background: var(--sand); outline: none; }
+
+  footer { background: var(--text-dark); color: rgba(255,255,255,0.5); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; }
+
+  @media (max-width: 700px) {
+    nav ul { display: none; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">YTRE <span>OPEN</span></a>
+  <ul>
+    <li><a href="#om">Om løpet</a></li>
+    <li><a href="#loypen">Løypen</a></li>
+    <li><a href="#praktisk">Praktisk</a></li>
+    <li><a href="#pamelding">Påmelding</a></li>
+    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="topp">
+  <div class="hero-bg-circles"><div class="circle c1"></div><div class="circle c2"></div></div>
+  <p class="hero-eyebrow">Swimrun · Randesund · Sommer 2026</p>
+  <h1>YTRE<br><span class="accent">OPEN</span></h1>
+  <p class="hero-sub">Svøm og løp rundt <strong>Randøya og Kalvøya</strong> – med start og mål i <strong>Kongshavn</strong></p>
+  <div class="hero-actions">
+    <a href="#pamelding" class="btn-primary">Registrer interesse</a>
+    <a href="#loypen" class="btn-outline">Se løypen</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">5</span><span class="stat-label">Øyer</span></div>
+    <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Svømmeetapper</span></div>
+    <div class="stat"><span class="stat-num">10km</span><span class="stat-label">Total distanse</span></div>
+    <div class="stat"><span class="stat-num">SØR</span><span class="stat-label">Norge</span></div>
+  </div>
+</section>
+
+<section class="about" id="om">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-label">Om arrangementet</p>
+        <h2 class="section-title">Kyst, Skjærgård og åpent hav</h2>
+        <p class="section-body">Ytre Open er et SwimRun-arrangement i hjertet av ytre Randesund. Du løper og svømmer deg rundt Randøyane, Kråkerøya og Kalvøyane.</p>
+        <p class="section-body" style="margin-top: 1rem;">SwimRun kombinerer løping på land med svømming i åpent hav, uten å skifte utstyr underveis. Enkelt, rått og utrolig morro!</p>
+      </div>
+      <div class="about-visual">
+        <p class="av-text">Svøm. Løp. Repeat.</p>
+        <p class="av-sub">Blaud og svett på samme tid.</p>
+        <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem; display: flex; justify-content: space-around;">
+          <div style="text-align: center;"><span style="color: #B8E8F3; font-weight: 800; font-size: 1.5rem; display: block;">Solo</span></div>
+          <div style="text-align: center;"><span style="color: #B8E8F3; font-weight: 800; font-size: 1.5rem; display: block;">Par</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="route" id="loypen">
+  <div class="container">
+    <p class="section-label">Løypen</p>
+    <h2 class="section-title">Rundt øyene</h2>
+    <div class="route-steps">
+      <div class="route-step"><span class="step-num">1</span><span class="step-type run">🏃 Løping</span><h3 class="step-title">Kongshavn</h3><p class="step-desc">Start i Kongshavn. Løp langs kysten mot første svømmeetappe.</p></div>
+      <div class="route-step"><span class="step-num">2</span><span class="step-type swim">🏊 Svømming</span><h3 class="step-title">Ut til Randøya</h3><p class="step-desc">Første svømmeetappe ut til Østre Randøy.</p></div>
+      <div class="route-step"><span class="step-num">3</span><span class="step-type run">🏃 Løping</span><h3 class="step-title">Skippergata</h3><p class="step-desc">Løp gjennom øya og forbi idylliske Skippergata.</p></div>
+      <div class="route-step"><span class="step-num">4</span><span class="step-type swim">🏊 Svømming</span><h3 class="step-title">Kalvøyane</h3><p class="step-desc">Svøm over sundet og inn til Ytre Kalvøy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="practical" id="praktisk">
+  <div class="container">
+    <p class="section-label">Praktisk info</p>
+    <h2 class="section-title">Alt du trenger å vite</h2>
+    <div class="info-grid">
+      <div class="info-card"><span class="info-icon">📍</span><h3 class="info-title">Start og mål</h3><p class="info-body">Kongshavn, Ytre Randesund, Kristiansand.</p></div>
+      <div class="info-card"><span class="info-icon">🗓</span><h3 class="info-title">Dato</h3><p class="info-body">Sommer 2026. Registrer e-post for nøyaktig dato.</p></div>
+      <div class="info-card"><span class="info-icon">🦺</span><h3 class="info-title">Sikkerhet</h3><p class="info-body">Livredningsvakter i båt og kajakk langs alle svømmeseksjoner.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PÅMELDINGSSKJEMA (FORMSPREE) -->
+<section class="signup" id="pamelding">
+  <div class="container" style="position: relative; z-index: 2;">
+    <p class="section-label">Interesse</p>
+    <h2 class="section-title">Bli med i fellesskapet</h2>
+    <p class="signup-sub">Meld din interesse i dag, så får du beskjed så snart påmeldingen åpner.</p>
+    
+    <form action="https://formspree.io/f/xykldqjy" method="POST" class="signup-form">
+      <input type="email" name="interessert_epost" placeholder="Din e-postadresse" required>
+      <button type="submit" class="btn-primary">Meld interesse</button>
+    </form>
+    
+    <p class="signup-fine" style="margin-top: 1rem; color: rgba(255,255,255,0.4);">Vi sender kun relevant info om Ytre Open.</p>
+  </div>
+</section>
+
+<!-- KONTAKTSKJEMA (FORMSPREE) -->
+<section class="contact" id="kontakt">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <p class="section-label">Kontakt</p>
+        <h2 class="section-title">Ta kontakt</h2>
+        <p class="section-body">Spørsmål? Vi hører gjerne fra deg.</p>
+        <p style="margin-top: 1rem;"><strong>E-post:</strong> Randesundswimrun@gmail.com</p>
+      </div>
+      <div class="contact-form-wrap">
+        <form action="https://formspree.io/f/xykldqjy" method="POST">
+          <div class="form-group">
+            <label>Navn</label>
+            <input type="text" name="navn" placeholder="Ditt navn" required>
+          </div>
+          <div class="form-group">
+            <label>E-post</label>
+            <input type="email" name="epost" placeholder="din@epost.no" required>
+          </div>
+          <div class="form-group">
+            <label>Melding</label>
+            <textarea name="melding" rows="4" placeholder="Hva lurer du på?" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Send melding</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">YTRE <span>OPEN</span></span>
+  <span>SwimRun · Randesund · 2026</span>
+  <span>© 2026 Ytre Open</span>
+</footer>
+
+</body>
+</html>
