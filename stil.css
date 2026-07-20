@@ -1,0 +1,201 @@
+/* ============================================================
+   YTRE OPEN – felles stilark
+   ============================================================ */
+
+:root {
+  /* ---- FARGER ---- */
+  --ocean:        #003F5E;
+  --ocean-mid:    #005F8A;
+  --water:        #00A8CC;
+  --water-light:  #B8E8F3;
+  --sand:         #FBF6EE;
+  --sand-dark:    #F0E8D8;
+  --coral:        #F4623A;
+  --coral-dark:   #D34E2A;
+  --white:        #FFFFFF;
+  --text-dark:    #0A2A3B;
+  --text-mid:     #3A5A6E;
+  --text-muted:   #7A9AAD;
+
+  /* ---- FONTER ---- */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* ---- TYPOGRAFI-SKALA ---- */
+  --h1-size:      clamp(4rem, 13vw, 8.5rem);
+  --title-size:   clamp(2.2rem, 5vw, 3.5rem);
+  --body-size:    1.05rem;
+  --letter-wide:  0.25em;
+
+  /* ---- FORM ---- */
+  --radius:       10px;
+  --section-pad:  5rem;
+}
+
+/* ============================================================
+   GRUNNLEGGENDE STILER
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--sand);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+
+/* NAV */
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 2.5rem; background: var(--ocean);
+}
+.nav-logo {
+  font-family: var(--font-display); font-weight: 900; font-size: 1.5rem;
+  letter-spacing: 0.08em; color: var(--white); text-decoration: none;
+}
+.nav-logo span { color: var(--water); }
+nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+nav ul a {
+  font-size: 0.875rem; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: rgba(255,255,255,0.8); text-decoration: none;
+}
+nav ul a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--coral) !important; color: var(--white) !important;
+  padding: 0.5rem 1.2rem; border-radius: 4px;
+}
+.nav-cta:hover { background: var(--coral-dark) !important; }
+
+/* HERO */
+.hero {
+  background: var(--ocean); display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  position: relative; overflow: hidden; padding: 5rem 2rem 4rem;
+}
+.hero-bg-circles { position: absolute; inset: 0; pointer-events: none; }
+.circle { position: absolute; border-radius: 50%; opacity: 0.06; background: var(--water); }
+.c1 { width: 700px; height: 700px; top: -200px; right: -150px; }
+.c2 { width: 500px; height: 500px; bottom: -100px; left: -150px; }
+.hero-eyebrow {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+  letter-spacing: var(--letter-wide); text-transform: uppercase;
+  color: var(--water); margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-family: var(--font-display); font-size: var(--h1-size); font-weight: 900;
+  line-height: 0.9; color: var(--white); text-transform: uppercase;
+}
+.hero h1 .accent { color: var(--water); }
+.hero-sub {
+  font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.7);
+  margin-top: 1.5rem; letter-spacing: 0.05em; line-height: 1.7;
+}
+.hero-sub strong { color: rgba(255,255,255,0.95); font-weight: 500; }
+.hero-actions { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+.btn-primary, .btn-outline {
+  display: inline-block; font-family: var(--font-display); font-size: 1.1rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.9rem 2.4rem; border-radius: 4px; text-decoration: none;
+  cursor: pointer; transition: background 0.2s, color 0.2s;
+}
+.btn-primary { background: var(--coral); color: var(--white); border: none; }
+.btn-primary:hover { background: var(--coral-dark); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.35); }
+.btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+.hero-wave { display: block; width: 100%; height: auto; }
+
+/* SEKSJONER */
+section { padding: var(--section-pad) 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-family: var(--font-display); font-size: 0.85rem; font-weight: 700;
+  letter-spacing: var(--letter-wide); text-transform: uppercase;
+  color: var(--water); margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: var(--font-display); font-size: var(--title-size); font-weight: 800;
+  line-height: 1; text-transform: uppercase; color: var(--ocean); margin-bottom: 1.2rem;
+}
+.section-body { font-size: var(--body-size); line-height: 1.75; color: var(--text-mid); max-width: 620px; }
+
+/* INFO-KORT (Oppsummering) */
+.info-grid { margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.info-card { border: 1.5px solid var(--sand-dark); border-radius: var(--radius); padding: 1.75rem; background: var(--white); }
+.info-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+.info-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; color: var(--ocean); margin-bottom: 0.5rem; }
+
+/* GALLERI */
+.gallery { background: var(--sand); }
+.gallery-filter { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 2rem; }
+.filter-btn {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.2rem;
+  border-radius: 999px; border: 2px solid var(--sand-dark); background: transparent;
+  color: var(--text-mid); cursor: pointer; transition: all 0.15s;
+}
+.filter-btn:hover { border-color: var(--water); color: var(--ocean); }
+.filter-btn[aria-pressed="true"] { background: var(--ocean); border-color: var(--ocean); color: var(--white); }
+
+.grid {
+  margin-top: 2.5rem;
+  columns: 3 260px;
+  column-gap: 1rem;
+}
+.grid figure {
+  break-inside: avoid; margin-bottom: 1rem; position: relative;
+  border-radius: var(--radius); overflow: hidden; background: var(--sand-dark);
+  cursor: zoom-in;
+}
+.grid img { width: 100%; height: auto; transition: transform 0.4s ease; }
+.grid figure:hover img { transform: scale(1.03); }
+
+/* LYSBOKS */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(4,26,38,0.95); z-index: 100;
+  display: none; align-items: center; justify-content: center; padding: 2rem;
+}
+.lightbox[open] { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 82vh; border-radius: 6px; object-fit: contain; }
+.lb-caption { position: absolute; bottom: 1.5rem; left: 0; right: 0; text-align: center; color: var(--white); font-size: 0.9rem; }
+.lb-btn {
+  position: absolute; background: rgba(255,255,255,0.12); color: var(--white);
+  border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 1.4rem;
+  cursor: pointer; display: grid; place-items: center; z-index: 110;
+}
+.lb-prev { left: 1.5rem; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 1.5rem; top: 50%; transform: translateY(-50%); }
+.lb-close { right: 1.5rem; top: 1.5rem; }
+
+/* HERO MED BILDE (2026.html) */
+.hero--foto { position: relative; }
+.hero--foto::after {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background-image: var(--hero-foto);
+  background-size: cover; background-position: center;
+}
+.hero--foto::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(rgba(0,63,94,0.62), rgba(0,63,94,0.82));
+}
+.hero--foto > * { position: relative; z-index: 2; }
+
+/* FOOTER */
+footer {
+  background: var(--text-dark); color: rgba(255,255,255,0.5); padding: 2rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem;
+}
+.footer-logo { font-family: var(--font-display); font-weight: 900; font-size: 1.2rem; color: var(--white); }
+
+/* MOBIL */
+@media (max-width: 700px) {
+  .grid { columns: 2 150px; }
+  nav ul li:not(.always-show) { display: none; }
+  .hero h1 { font-size: 3.5rem; }
+}
