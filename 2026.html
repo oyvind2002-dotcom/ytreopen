@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-THKCG653');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H3QY78LEW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3H3QY78LEW');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bilder og oppsummering fra Ytre Open 2026 – swimrun i Randesund, Kristiansand.">
+    <title>Ytre Open 2026 – bilder</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+/* ============================================================
+   YTRE OPEN – felles stilark
+   ------------------------------------------------------------
+   ALT DU NORMALT VIL ENDRE LIGGER I BLOKKEN UNDER.
+   Endre en verdi her, så oppdateres begge sidene samtidig.
+   ============================================================ */
+
+:root {
+  /* ---- FARGER ---------------------------------------------
+     --ocean      = mørk bakgrunn (nav, hero, footer-seksjoner)
+     --water      = lys blå aksent (tall, labels, logo-halvdel)
+     --coral      = knapper og "trykk her"-farge
+     --sand       = sidebakgrunn
+  ---------------------------------------------------------- */
+  --ocean:        #003F5E;
+  --ocean-mid:    #005F8A;
+  --water:        #00A8CC;
+  --water-light:  #B8E8F3;
+  --sand:         #FBF6EE;
+  --sand-dark:    #F0E8D8;
+  --coral:        #F4623A;
+  --coral-dark:   #D34E2A;
+  --white:        #FFFFFF;
+  --text-dark:    #0A2A3B;
+  --text-mid:     #3A5A6E;
+  --text-muted:   #7A9AAD;
+
+  /* ---- FONTER ---------------------------------------------
+     --font-display = overskrifter, logo, knapper (bred/tung)
+     --font-body    = brødtekst
+     Bytter du font her, må du også bytte <link> til Google
+     Fonts øverst i index.html og 2026.html.
+     Forslag som passer stilen:
+       Display: 'Barlow Condensed', 'Oswald', 'Archivo Black', 'Anton'
+       Body:    'Barlow', 'Inter', 'Work Sans', 'Source Sans 3'
+  ---------------------------------------------------------- */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* ---- TYPOGRAFI-SKALA ------------------------------------ */
+  --h1-size:      clamp(4rem, 13vw, 8.5rem);   /* hero-tittel  */
+  --title-size:   clamp(2.2rem, 5vw, 3.5rem);  /* seksjonstittel */
+  --body-size:    1.05rem;
+  --letter-wide:  0.25em;   /* sperring på små versaler */
+
+  /* ---- FORM ------------------------------------------------ */
+  --radius:       10px;
+  --section-pad:  5rem;
+}
+
+/* ============================================================
+   Herfra og ned er selve oppsettet. Trenger sjelden endring.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--sand);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+
+/* NAV */
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 2.5rem; background: var(--ocean);
+}
+.nav-logo {
+  font-family: var(--font-display); font-weight: 900; font-size: 1.5rem;
+  letter-spacing: 0.08em; color: var(--white); text-decoration: none;
+}
+.nav-logo span { color: var(--water); }
+nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+nav ul a {
+  font-size: 0.875rem; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: rgba(255,255,255,0.8); text-decoration: none;
+}
+nav ul a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--coral) !important; color: var(--white) !important;
+  padding: 0.5rem 1.2rem; border-radius: 4px;
+}
+.nav-cta:hover { background: var(--coral-dark) !important; }
+
+/* HERO */
+.hero {
+  background: var(--ocean); display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  position: relative; overflow: hidden; padding: 5rem 2rem 4rem;
+}
+.hero-bg-circles { position: absolute; inset: 0; pointer-events: none; }
+.circle { position: absolute; border-radius: 50%; opacity: 0.06; background: var(--water); }
+.c1 { width: 700px; height: 700px; top: -200px; right: -150px; }
+.c2 { width: 500px; height: 500px; bottom: -100px; left: -150px; }
+.hero-eyebrow {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+  letter-spacing: var(--letter-wide); text-transform: uppercase;
+  color: var(--water); margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-family: var(--font-display); font-size: var(--h1-size); font-weight: 900;
+  line-height: 0.9; color: var(--white); text-transform: uppercase;
+}
+.hero h1 .accent { color: var(--water); }
+.hero-sub {
+  font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.7);
+  margin-top: 1.5rem; letter-spacing: 0.05em; line-height: 1.7;
+}
+.hero-sub strong { color: rgba(255,255,255,0.95); font-weight: 500; }
+.hero-actions { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+.btn-primary, .btn-outline {
+  display: inline-block; font-family: var(--font-display); font-size: 1.1rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.9rem 2.4rem; border-radius: 4px; text-decoration: none;
+  cursor: pointer; transition: background 0.2s, color 0.2s;
+}
+.btn-primary { background: var(--coral); color: var(--white); border: none; }
+.btn-primary:hover { background: var(--coral-dark); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.35); }
+.btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+.hero-stats { display: flex; gap: 3rem; margin-top: 4rem; flex-wrap: wrap; justify-content: center; }
+.stat { text-align: center; }
+.stat-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--water); display: block; }
+.stat-label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.hero-wave { display: block; width: 100%; }
+
+/* SEKSJONER */
+section { padding: var(--section-pad) 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-family: var(--font-display); font-size: 0.85rem; font-weight: 700;
+  letter-spacing: var(--letter-wide); text-transform: uppercase;
+  color: var(--water); margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: var(--font-display); font-size: var(--title-size); font-weight: 800;
+  line-height: 1; text-transform: uppercase; color: var(--ocean); margin-bottom: 1.2rem;
+}
+.section-body { font-size: var(--body-size); line-height: 1.75; color: var(--text-mid); max-width: 620px; }
+.section-body + .section-body { margin-top: 1rem; }
+
+.about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about-visual {
+  background: var(--ocean); border-radius: 12px; padding: 3rem 2.5rem;
+  color: var(--white); text-align: center; position: relative; overflow: hidden;
+}
+.about-visual::before {
+  content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%;
+  background: var(--water); opacity: 0.08; top: -80px; right: -80px;
+}
+.av-text { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--water-light); line-height: 1.3; }
+.av-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem; }
+.av-split { margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem; display: flex; justify-content: space-around; }
+.av-big { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--water-light); display: block; }
+.av-small { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+/* LØYPE */
+.route { background: var(--sand); }
+.route-steps { margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.route-step { background: var(--white); border-radius: var(--radius); padding: 1.75rem 1.5rem; position: relative; overflow: hidden; border-top: 4px solid var(--water); }
+.step-num { font-family: var(--font-display); font-size: 3.5rem; font-weight: 900; color: var(--sand-dark); position: absolute; top: 0.5rem; right: 1rem; line-height: 1; }
+.step-type { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 3px; margin-bottom: 0.75rem; }
+.swim { background: #E0F4FB; color: var(--ocean-mid); }
+.run { background: #FFF0EB; color: #C04020; }
+.step-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--ocean); margin-bottom: 0.4rem; }
+.step-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.5; }
+.route-note { margin-top: 2rem; padding: 1.2rem 1.5rem; background: var(--ocean); color: rgba(255,255,255,0.85); border-radius: 8px; font-size: 0.95rem; line-height: 1.6; }
+.route-note strong { color: var(--water-light); }
+
+/* INFO-KORT */
+.practical { background: var(--white); }
+.info-grid { margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.info-card { border: 1.5px solid var(--sand-dark); border-radius: var(--radius); padding: 1.75rem; }
+.info-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+.info-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ocean); margin-bottom: 0.5rem; }
+.info-body { font-size: 0.92rem; color: var(--text-mid); line-height: 1.6; }
+
+/* MØRK CTA-SEKSJON (erstatter påmelding) */
+.dark-cta { background: var(--ocean); text-align: center; position: relative; overflow: hidden; }
+.dark-cta::before, .dark-cta::after { content: ''; position: absolute; border-radius: 50%; background: var(--water); opacity: 0.07; }
+.dark-cta::before { width: 600px; height: 600px; top: -200px; left: -150px; }
+.dark-cta::after { width: 400px; height: 400px; bottom: -100px; right: -100px; }
+.dark-cta .container { position: relative; z-index: 2; }
+.dark-cta .section-label { color: var(--water-light); }
+.dark-cta .section-title { color: var(--white); }
+.dark-cta .section-body { color: rgba(255,255,255,0.7); max-width: 560px; margin-left: auto; margin-right: auto; }
+
+/* KONTAKT */
+.contact { background: var(--sand); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+.contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+.ci-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+.ci-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.2rem; }
+.ci-val { font-size: 1rem; color: var(--text-dark); font-weight: 500; }
+.contact-form-wrap { background: var(--white); border-radius: 12px; padding: 2.5rem; }
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 0.4rem; }
+.form-group input, .form-group textarea {
+  width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--sand-dark);
+  border-radius: 6px; font-family: var(--font-body); font-size: 0.95rem;
+  color: var(--text-dark); background: var(--sand); outline: none; resize: vertical;
+}
+
+/* FOOTER */
+footer {
+  background: var(--text-dark); color: rgba(255,255,255,0.5); padding: 2rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem;
+}
+.footer-logo { font-family: var(--font-display); font-weight: 900; font-size: 1.2rem; color: rgba(255,255,255,0.8); letter-spacing: 0.05em; }
+.footer-logo span { color: var(--water); }
+
+/* ============================================================
+   HERO MED BAKGRUNNSBILDE (brukes på 2026.html)
+   Bytt bilde ved å endre style="--hero-foto: url(...)" i HTML-en.
+   ============================================================ */
+.hero--foto { position: relative; }
+.hero--foto::after {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background-image: var(--hero-foto);
+  background-size: cover; background-position: center;
+}
+.hero--foto::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(rgba(0,63,94,0.62), rgba(0,63,94,0.82));
+}
+.hero--foto > * { position: relative; z-index: 2; }
+.hero--foto .hero-wave { z-index: 3; }
+
+/* ============================================================
+   BILDESTRIPE (teaser på forsiden)
+   ============================================================ */
+.strip { background: var(--white); padding-top: 0; }
+.strip-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-top: 2rem; }
+.strip-row a { display: block; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; background: var(--sand-dark); }
+.strip-row img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.strip-row a:hover img { transform: scale(1.05); }
+.strip-link { display: inline-block; margin-top: 1.5rem; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral); text-decoration: none; border-bottom: 2px solid var(--coral); padding-bottom: 2px; }
+@media (max-width: 700px) { .strip-row { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============================================================
+   GALLERI (2026-siden)
+   ============================================================ */
+.gallery { background: var(--sand); }
+
+.grid {
+  margin-top: 2.5rem;
+  columns: 3 260px;      /* murstein-oppsett: fyller seg selv */
+  column-gap: 1rem;
+}
+.grid figure {
+  break-inside: avoid; margin-bottom: 1rem; position: relative;
+  border-radius: var(--radius); overflow: hidden; background: var(--sand-dark);
+  cursor: zoom-in;
+}
+.grid img { width: 100%; height: auto; transition: transform 0.4s ease; }
+.grid figure:hover img { transform: scale(1.03); }
+.grid figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem 1rem 0.8rem;
+  font-size: 0.85rem; color: var(--white);
+  background: linear-gradient(transparent, rgba(0,63,94,0.85));
+  opacity: 0; transition: opacity 0.25s;
+}
+.grid figure:hover figcaption, .grid figure:focus-within figcaption { opacity: 1; }
+.gallery-empty {
+  margin-top: 2.5rem; border: 2px dashed var(--sand-dark); border-radius: var(--radius);
+  padding: 3rem 2rem; text-align: center; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;
+}
+
+/* LYSBOKS */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(4,26,38,0.95); z-index: 100;
+  display: none; align-items: center; justify-content: center; padding: 2rem;
+}
+.lightbox[open] { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 82vh; border-radius: 6px; }
+.lb-caption { position: absolute; bottom: 1.5rem; left: 0; right: 0; text-align: center; color: rgba(255,255,255,0.75); font-size: 0.9rem; padding: 0 2rem; }
+.lb-btn {
+  position: absolute; background: rgba(255,255,255,0.12); color: var(--white);
+  border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 1.4rem;
+  cursor: pointer; display: grid; place-items: center;
+}
+.lb-btn:hover { background: rgba(255,255,255,0.25); }
+.lb-prev { left: 1.5rem; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 1.5rem; top: 50%; transform: translateY(-50%); }
+.lb-close { right: 1.5rem; top: 1.5rem; }
+
+/* MOBIL */
+@media (max-width: 700px) {
+  nav { padding: 1rem 1.25rem; }
+  nav ul { gap: 1rem; }
+  nav ul li:not(.always-show) { display: none; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  footer { flex-direction: column; text-align: center; }
+  section { padding: 3.5rem 1.25rem; }
+  .hero-stats { gap: 1.75rem; }
+  .lb-prev { left: 0.5rem; } .lb-next { right: 0.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THKCG653"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- NAV -->
+    <nav>
+      <a href="index.html" class="nav-logo">YTRE <span>OPEN</span></a>
+      <ul>
+        <li><a href="index.html#om">Om løpet</a></li>
+        <li><a href="index.html#loypen">Løypen</a></li>
+        <li><a href="index.html#praktisk">Praktisk</a></li>
+        <li><a href="#galleri">Bilder</a></li>
+        <li class="always-show"><a href="index.html" class="nav-cta">Til forsiden</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <!-- HERO-BILDE: bytt filnavnet under for et annet bakgrunnsbilde -->
+    <section class="hero hero--foto" style="--hero-foto: url('bilder/dsc06092.jpg');">
+      <div class="hero-bg-circles"><div class="circle c1"></div><div class="circle c2"></div></div>
+      <p class="hero-eyebrow">18. juli 2026 · Kongshavn</p>
+      <h1>YTRE OPEN<br><span class="accent">2026</span></h1>
+      <p class="hero-sub">
+        Slik så den <strong>første utgaven</strong> ut.<br>
+        Bilder fra start, sjø, svaberg og innspurt.
+      </p>
+      <div class="hero-actions">
+        <a href="#galleri" class="btn-primary">Til bildene</a>
+        <a href="index.html#kontakt" class="btn-outline">Har du egne bilder?</a>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#FBF6EE"></path>
+      </svg>
+    </section>
+
+    <!-- INTRO over galleriet – rediger teksten fritt -->
+    <section class="practical">
+      <div class="container">
+        <p class="section-label">Oppsummering</p>
+        <h2 class="section-title">Ytre Open 2026</h2>
+        <p class="section-body">Første utgave av Ytre Open gikk av stabelen 18. juli 2026, med start og mål i Kongshavn og løype rundt Randøyane, Kalvøyane og Kråkerøya.</p>
+      </div>
+    </section>
+
+    <!-- GALLERI -->
+    <section class="gallery" id="galleri">
+      <div class="container">
+        <p class="section-label">Bildegalleri</p>
+        <h2 class="section-title">Fra start til mål</h2>
+        <p class="section-body">Klikk på et bilde for å se det i full størrelse. Bla med piltastene.</p>
+
+        <div class="grid" id="grid"></div>
+        <div class="gallery-empty" id="tom" hidden>
+          Ingen bilder er lagt inn ennå.<br>
+          Legg filene i mappen <strong>bilder/</strong> og skriv dem inn i listen øverst i denne filen.
+        </div>
+
+        <p class="route-note" style="margin-top: 2.5rem;">
+          <strong>Foto:</strong> Fyll inn fotograf(er) her. Har du bilder du vil dele?
+          <a href="index.html#kontakt" style="color: var(--water-light);">Send dem til oss.</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- LYSBOKS -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildevisning">
+      <button class="lb-btn lb-close" id="lbClose" aria-label="Lukk">✕</button>
+      <button class="lb-btn lb-prev" id="lbPrev" aria-label="Forrige bilde">‹</button>
+      <img id="lbImg" src="" alt="">
+      <button class="lb-btn lb-next" id="lbNext" aria-label="Neste bilde">›</button>
+      <p class="lb-caption" id="lbCap"></p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <span class="footer-logo">YTRE <span>OPEN</span></span>
+      <span>SwimRun · Randesund · Kongshavn</span>
+      <span>© 2026 Ytre Open</span>
+    </footer>
+
+<script>
+/* ============================================================
+   BILDELISTE – DET ENESTE DU TRENGER Å ENDRE
+   ------------------------------------------------------------
+   1. Legg bildefilene i mappen "bilder/"
+   2. Legg til en linje per bilde under.
+      fil   = filnavnet
+      tekst = bildetekst (valgfri, vises når du holder over)
+   ============================================================ */
+const BILDER = [
+  /* --- BILDENE SOM VISES NÅ (24 stk) ---
+     Vil du skjule et bilde: sett // foran linjen.
+     Vil du vise et av reservebildene lenger nede: fjern // foran den linjen.
+     tekst = bildeteksten som vises. Bytt gjerne ut "Ytre Open 2026" med noe eget. */
+  { fil: "bilder/dsc05575.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05621.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05643.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05659.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05670.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05700.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05708.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05711.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05738.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05761.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05770.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05773.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05781.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05858.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05865.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05993.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc05996.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc06054.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc06073.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc06089.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc06092.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc06111.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc06124.jpg", tekst: "Ytre Open 2026" },
+  { fil: "bilder/dsc06133.jpg", tekst: "Ytre Open 2026" },
+
+  /* --- RESERVEBILDER (56 stk, ligger klare i bilder/) --- */
+  //{ fil: "bilder/dsc05528.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05558.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05596.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05634.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05648.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05649.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05669.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05715.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05716.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05721.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05728.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05803.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05833.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05840.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05843.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05845.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05847.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05849.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05855.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05871.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05872.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05885.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05897.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05898.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05899.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05913.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05915.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05925.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05926.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05927.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05928.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05934.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05946.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05951.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05952.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05953.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05954.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05955.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05956.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05970.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05982.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc05990.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06000.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06010.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06039.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06048.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06052.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06062.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06064.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06071.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06072.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06079.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06084.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06096.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06103.jpg", tekst: "Ytre Open 2026" },
+  //{ fil: "bilder/dsc06138.jpg", tekst: "Ytre Open 2026" },
+];
+
+/* ---------- Herfra og ned trenger du ikke røre ---------- */
+const grid = document.getElementById('grid');
+const tom = document.getElementById('tom');
+const synlige = BILDER;
+
+if (synlige.length === 0) {
+  tom.hidden = false;
+} else {
+  synlige.forEach((b, i) => {
+    const fig = document.createElement('figure');
+    fig.tabIndex = 0;
+    fig.innerHTML =
+      '<img src="' + b.fil + '" alt="' + (b.tekst || 'Ytre Open 2026') + '" loading="lazy" ' +
+      'onerror="this.parentNode.style.display=\'none\'">' +
+      (b.tekst ? '<figcaption>' + b.tekst + '</figcaption>' : '');
+    fig.addEventListener('click', () => apne(i));
+    fig.addEventListener('keydown', e => { if (e.key === 'Enter') apne(i); });
+    grid.appendChild(fig);
+  });
+}
+
+/* Lysboks */
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCap = document.getElementById('lbCap');
+let n = 0;
+
+function apne(i) { n = i; vis(); lb.setAttribute('open', ''); }
+function lukk() { lb.removeAttribute('open'); }
+function vis() {
+  const b = synlige[n];
+  lbImg.src = b.fil;
+  lbImg.alt = b.tekst || 'Ytre Open 2026';
+  lbCap.textContent = (b.tekst || '') + '  (' + (n + 1) + '/' + synlige.length + ')';
+}
+function bla(steg) { n = (n + steg + synlige.length) % synlige.length; vis(); }
+
+document.getElementById('lbClose').addEventListener('click', lukk);
+document.getElementById('lbPrev').addEventListener('click', () => bla(-1));
+document.getElementById('lbNext').addEventListener('click', () => bla(1));
+lb.addEventListener('click', e => { if (e.target === lb) lukk(); });
+document.addEventListener('keydown', e => {
+  if (!lb.hasAttribute('open')) return;
+  if (e.key === 'Escape') lukk();
+  if (e.key === 'ArrowLeft') bla(-1);
+  if (e.key === 'ArrowRight') bla(1);
+});
+</script>
+</body>
+</html>
